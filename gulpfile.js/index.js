@@ -47,7 +47,10 @@ function browserReload(cb){
     browserSync.reload();
     cb();
 }
-
+function copyFonts() {
+    return src('./src/fonts/**/*.{ttf,woff,eof,svg}')
+    .pipe(dest('./dist/fonts/'));
+ };
 function watchTask(){
     watch('/src/img/**/*', series(minifyImages, browserReload)),
     watch('./src/**/*.html', series(htmlInclude, browserReload)),
@@ -55,15 +58,13 @@ function watchTask(){
     watch('./src/js/**/*.js', series(minifyJS, browserReload));
     watch('./src/fonts/**/*.{ttf,woff,eof,svg}', series(copyFonts, browserReload))
 }
-function copyFonts() {
-    gulp.src('/src/fonts/**/*.{ttf,woff,eof,svg}')
-    .pipe(dest('./dist/fonts/'));
- };
+
   exports.default = series(
     minifyImages,
     htmlInclude,
     scssCompiler,
     minifyJS,
+    copyFonts,
     parallel(browserSyn, watchTask)
 )
     
