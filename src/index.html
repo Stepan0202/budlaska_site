@@ -8,45 +8,66 @@
 </head>
 <body>
     <div class="wrapper">
-        <header>
-            <div class="logo__container">будь ласка</div>
-            <menu class="menu">
-                <ul>
-                    <li><a href="">про «будь ласка»</a></li>
-                    <li><a href="">ціни</a></li>
-                    <li><a href="">оплата і доставка</a></li>
-                    <li><a href="">контакти</a></li>
-                </ul>
-            </menu>
-            <div class="orderButton"><a href="">замовити</a></div>
+        <header class="header">
+            <div class="container">
+                <div class="row  d-flex justify-content-between">
+                    <div class="logo__container col-3">будь ласка</div>
+                    <menu class="menu col-md-6 col-sm-2">
+                        <ul class="d-flex justify-content-between">
+                            <li><a href="">про «будь ласка»</a></li>
+                            <li><a href="">ціни</a></li>
+                            <li><a href="">оплата і доставка</a></li>
+                            <li><a href="">контакти</a></li>
+                        </ul>
+                    </menu>
+                    <div class="col-sm-3 col-md-3 d-flex justify-content-end"><div class="orderButton d-flex align-items-center justify-content-center"><a href="">замовити</a></div></div>
+                </div>
+
+            </div>
         </header>
         <div class="lead">
-            <h1>Будь ласка</h1>
-            <p class="descriptor">Валюта дитячого щастячка</p>
+            <div class="container d-flex flex-column justify-content-center">
+                <h1>Будь ласка</h1>
+                <p class="descriptor">Валюта дитячого щастячка</p>
+            </div>
         </div>
         <div class="preferences">
-            <div class="cards">
-                <div class="card">
-                    <img src="./img/icons/fair-trade.png" alt="Перевага: вчить відповідальності" class="card__img">
-                    <h3 class="card__header">Вчить відповідальності</h3>
-                    <p class="card__descriptor">Дитина безпечно вчиться розпоряджатись своїм майном та відповідально ставитись до ресурсів, що обмежені.</p>
+            <div class="container">
+                <div class="row">
+                    <div class="cards">
+                        <div class="card card_blur">
+                            <div class="card__imgContainer">
+                                <img src="./img/icons/fair-trade.png" alt="Перевага: вчить відповідальності" class="card__img">
+                            </div>
+                            <h3 class="card__header">Вчить відповідальності</h3>
+                            <p class="card__descriptor">Дитина безпечно вчиться розпоряджатись своїм майном та відповідально ставитись до ресурсів, що обмежені.</p>
+                        </div>
+                        <div class="card card_blur">
+                            <div class="card__imgContainer">
+                                <img src="./img/icons/warning.png" alt="Перевага: корисне обмеження" class="card__img">
+                            </div>
+                            <h3 class="card__header">Корисне обмеження</h3>
+                            <p class="card__descriptor">Можете більше не думати: «Чи не забагато я дозволяю?». Бо точно знатимите, скільки разів правила родини були пом’якшені.</p>
+                        </div>
+                        <div class="card card_blur">
+                            <div class="card__imgContainer">
+                                <img src="./img/icons/imagination.png" alt="Перевага: компроміс між «можна» та «хочу»" class="card__img">
+                            </div>
+                            <h3 class="card__header">Компроміс між «можна» та «хочу»</h3>
+                            <p class="card__descriptor">Може, дитині дійсно необхідно, наприклад, не піти до школи. Головне, щоб подібне не ставало системою. «Будь ласка» цього не допустить.</p>
+                        </div>
+                        <div class="card card_blur">
+                            <div class="card__imgContainer">
+                                <img src="./img/icons/activities.png" alt="" class="card__img">
+                            </div>
+                            <h3 class="card__header">Індикатор потреб</h3>
+                            <p class="card__descriptor">Іноді відступити від правил — не забаганка, а реальна потреба. Якщо дитина готова віддати свій дорогоцінний купон, значить точно потребує пом’якшення. </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <img src="./img/icons/warning.png" alt="Перевага: корисне обмеження" class="card__img">
-                    <h3 class="card__header">Корисне обмеження</h3>
-                    <p class="card__descriptor">Можете більше не думати: «Чи не забагато я дозволяю?». Бо точно знатимите, скільки разів правила родини були пом’якшені.</p>
-                </div>
-                <div class="card">
-                    <img src="./img/icons/imagination.png" alt="Перевага: компроміс між «можна» та «хочу»" class="card__img">
-                    <h3 class="card__header">Компроміс між «можна» та «хочу»</h3>
-                    <p class="card__descriptor">Може, дитині дійсно необхідно, наприклад, не піти до школи. Головне, щоб подібне не ставало системою. «Будь ласка» цього не допустить.</p>
-                </div>
-                <div class="card">
-                    <img src="./img/icons/activities.png" alt="" class="card__img">
-                    <h3 class="card__header">Індикатор потреб</h3>
-                    <p class="card__descriptor">Іноді відступити від правил — не забаганка, а реальна потреба. Якщо дитина готова віддати свій дорогоцінний купон, значить точно потребує пом’якшення. </p>
-                </div>
+
             </div>
+   
         </div>
         <div class="imgAndDesc">
             <div class="imgAndDesc__img"><img src="./img/several_coupons_400x320.jpg" alt="Заображення купонів"></div>

@@ -1,11 +1,164 @@
 @import "./assets/fonts";
+@import "./assets/variables";
 @import "../../node_modules/bootstrap/scss/bootstrap-grid.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap-reboot.scss";
 h1{
     font-family: 'AA-Akashi';
+    color: $logo-color;
+    font-size: 9vw;
 }
+a:link, a:visited {
+    color: $text-color;
+    text-decoration: none;
+    cursor: auto;
+  }
+  
+  a:link:active, a:visited:active {
+    color: $text-color;
+  }
+  a:hover{
+    cursor: pointer;
+  }
 p{
     font-family: Arimo;
 }
 body{
-    
+    font-family: Arimo;
+    color: $text-color;
+    font-size: 12px;
+    max-width: 100%;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+   
+}
+.header{
+    padding: 20px 0;
+}
+.logo__container {
+    font-family: 'AA-Akashi';
+    text-transform: uppercase;
+    color: $logo-color;
+    font-size: 18px;
+
+}
+.menu {
+    ul{
+        display: flex;
+        list-style: none;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+}
+.orderButton {
+    text-transform: uppercase;
+    background-color: $button-bg-color;
+    border-radius: 15px;
+    width: 50%;
+    height: 30px;
+    font-size: 14px;
+    text-align: center;
+    a:link, a:visited, a:link:active, a:visited:active {
+        color: $button-text-color;
+        line-height: 100%;
+      }
+}
+.lead {
+    background-image: url("../img/bg_pattern.jpg");
+    padding: 150px 0 203px;
+    text-align: center;
+}
+.descriptor {
+    font-weight: 600;
+    font-size: 3vw;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.25vw;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: max-content;
+    margin: 0 auto;
+    padding: 10px 15px;
+    border-radius: 15px;
+}
+@media  (min-width: 625px) and (max-width: 767px){
+    h1{
+        font-size: 8.5vw;
+    }
+}
+.preferences {
+}
+.card_blur{
+    background-color: rgb(255 255 255 / 30%);
+    backdrop-filter: blur(10px);
+}
+.cards {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+align-items: center;
+margin: -10% auto 0;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0 1 300px;
+    padding: 36px 5px 33px;
+    text-align: center;
+    border: rgb(0 0 0 / 10%) solid 5px;
+    border-radius: 15px;
+
+    .card__imgContainer{
+        height: 40%;
+        flex: 1 0 84px;
+    }
+    .card__header{
+        font-size: 18px;
+        color: $logo-color; 
+        flex: 1 0 auto;
+    }
+
+    .card__descriptor{
+        width: 250px;
+        flex: 1 0 auto;
+        font-size: 14px;
+    }
+
+
+}
+.card__img {
+}
+.card__header {
+}
+.card__descriptor {
+}
+.imgAndDesc {
+}
+.imgAndDesc__img {
+}
+.imgAndDesc__text {
+}
+.imgAndDesc__btn {
+}
+.prices {
+}
+.prices__cards {
+}
+.card_descriptor {
+}
+.card__button {
+}
+.timer {
+}
+.timer__desc {
+}
+.timer__body {
+}
+.complectation {
+}
+.form {
+}
+.contacts {
 }
