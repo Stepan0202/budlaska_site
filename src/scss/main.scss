@@ -2,10 +2,16 @@
 @import "./assets/variables";
 @import "../../node_modules/bootstrap/scss/bootstrap-grid.scss";
 @import "../../node_modules/bootstrap/scss/bootstrap-reboot.scss";
-h1{
+h1, h2, h3{
     font-family: 'AA-Akashi';
     color: $logo-color;
+    text-transform: uppercase;
+}
+h1{
     font-size: 9vw;
+}
+h2{
+    font-size: 4.5vw;
 }
 a:link, a:visited {
     color: $text-color;
@@ -21,6 +27,16 @@ a:link, a:visited {
   }
 p{
     font-family: Arimo;
+}
+.button_red{
+    background-color: $button-bg-color;
+    color: $button-text-color;
+    text-transform: uppercase;
+    text-align: center;
+    a:link, a:visited, a:link:active, a:visited:active {
+        color: $button-text-color;
+        line-height: 100%;
+    }
 }
 body{
     font-family: Arimo;
@@ -52,17 +68,10 @@ body{
     }
 }
 .orderButton {
-    text-transform: uppercase;
-    background-color: $button-bg-color;
     border-radius: 15px;
     width: 50%;
     height: 30px;
     font-size: 14px;
-    text-align: center;
-    a:link, a:visited, a:link:active, a:visited:active {
-        color: $button-text-color;
-        line-height: 100%;
-      }
 }
 .lead {
     background-image: url("../img/bg_pattern.jpg");
@@ -97,7 +106,10 @@ display: flex;
 flex-wrap: wrap;
 justify-content: space-between;
 align-items: center;
-margin: -10% auto 0;
+margin-bottom: 30px;
+}
+.cards_negativeMargin{
+    margin: -10% auto 0;
 }
 .card {
     display: flex;
@@ -107,9 +119,6 @@ margin: -10% auto 0;
     flex: 0 1 300px;
     padding: 36px 5px 33px;
     text-align: center;
-    border: rgb(0 0 0 / 10%) solid 5px;
-    border-radius: 15px;
-
     .card__imgContainer{
         height: 40%;
         flex: 1 0 84px;
@@ -125,30 +134,59 @@ margin: -10% auto 0;
         flex: 1 0 auto;
         font-size: 14px;
     }
+}
+.card_border{
+    border: rgb(0 0 0 / 10%) solid 5px;
+    border-radius: 15px;
+}
 
-
-}
-.card__img {
-}
-.card__header {
-}
-.card__descriptor {
-}
 .imgAndDesc {
-}
-.imgAndDesc__img {
+    img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    }
+    
 }
 .imgAndDesc__text {
+    font-size: 18px;
 }
 .imgAndDesc__btn {
+    width: 100%;
+    height: 42px;
+    font-size: 14px;
+    line-height: 42px;
+    letter-spacing: 2.5px;
+    border-radius: 55px;
+    a:link, a:visited, a:link:active, a:visited:active{
+        text-transform: uppercase;
+        color: $button-text-color;
+      }
 }
 .prices {
+    .container > p {
+        font-size: 18px;
+    }
 }
 .prices__cards {
 }
-.card_descriptor {
+.oldPrice{
+    text-decoration: line-through;
+    font-weight: 600;
 }
-.card__button {
+.newPrice{
+    font-size: 18px;
+    color: $button-bg-color;
+    font-weight: 600;
+}
+.card_descriptor {
+    
+}
+.card__btn {
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 55px;
 }
 .timer {
 }
