@@ -9,20 +9,22 @@
 <body>
     <div class="wrapper">
         <header class="header">
-            <div class="container">
-                <div class="row  d-flex justify-content-between">
-                    <div class="logo__container col-3">будь ласка</div>
-                    <menu class="menu col-md-6 col-sm-2">
-                        <ul class="d-flex justify-content-between">
+            <div class="container header__container">
+                <div class="row header__body d-flex justify-content-between align-items-center">
+                    <div class="logo__container d-flex justify-content-start justify-content-md-center col-md-2">будь ласка</div>
+                    <div class="header__burger col-1 mx-1">
+                        <span></span>
+                    </div>
+                    <menu class="menu col-md-7 col-sm-2 d-flex">
+                        <ul class="d-flex justify-content-between col-8 col-md-8 mx-auto">
                             <li><a href="">про «будь ласка»</a></li>
                             <li><a href="">ціни</a></li>
                             <li><a href="">оплата і доставка</a></li>
                             <li><a href="">контакти</a></li>
                         </ul>
                     </menu>
-                    <div class="col-sm-3 col-md-3 d-flex justify-content-end"><div class="button_red orderButton d-flex align-items-center justify-content-center"><a href="">замовити</a></div></div>
+                    <div class="button__container col-sm-3 d-flex justify-content-center"><div class="button_red orderButton d-flex align-items-center justify-content-center"><a href="">замовити</a></div></div>
                 </div>
-
             </div>
         </header>
         <div class="lead">
@@ -98,7 +100,7 @@
                             </p>
                             <p>281 грн/комлпект</p>
                         </div>
-                        <div class="button_red card__btn"><a href="">замовит</a></div>
+                        <div class="button_red card__btn"><a href="">замовити</a></div>
                     </div>
                     <div class="card">
                         <div class="card__img"></div>
@@ -139,8 +141,8 @@
                 <h2>ЩО ВХОДИТЬ У КОМПЛЕКТ</h2>
                 <p>Ми тестували «БУДЬ ЛАСКА» на своїх дітях. По-перше, вони були в захваті. По-друге, комплекту вистачило більше, ніж на півроку. А деякі купони діти берегли до останнього.</p>
                 <div class="cards prices__cards">
-                    <div class="card">
-                        <div class="card__img"><img src="" alt=""></div>
+                    <div class="card card_transparent">
+                        <div class="card__img"><img src="./img/several_coupons_1000x800.jpg" alt="Заображення купонів"></div>
                         <h3 class="card__header">20 КАРТОК — ПО 
                             2 КОЖНОГО ВИДУ</h3>
                     </div>
@@ -155,18 +157,75 @@
                 </div>
             </div>
         </div>
-        <div class="form">
-            <h2>Замовляйте «БУДЬ ЛАСКА» прямо зараз</h2>
-            <p>Тираж партії зі знижкою обмежений!</p>
-            <form action="" method="post">
+        <div class="orderForm mt-5">
+            <div class="container">
+                <h2>Тираж партії зі знижкою обмежений!</h2>
+                <p>Замовляйте «БУДЬ ЛАСКА» прямо зараз</p>
+                <ul class="nav nav-tabs" id="orderTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Оформити замовлення</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Замовити в 1 клік</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="orderTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <form class="row g-3 py-5">
+                            <div class="col-12 col-md-6 d-flex">
+                                <label for="secondName">Прізвище</label>
+                                <input type="text" class="form-control" id="secondName" placeholder="Шевченко">
+                            </div>
+                            <div class="col-12 col-md-6 d-flex">
+                                <label for="name">Ім'я</label>
+                                <input type="text" class="form-control" id="name" placeholder="Тамара">
+                            </div>
+                            <div class="col-12 col-md-6 d-flex">
+                                <label for="lastName">По-батькові</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="Олександрівна">
+                            </div>
+                            <div class="col-12 col-md-6 d-flex">
+                              <label for="mail">Eлектрона адреса</label>
+                              <input type="text" class="form-control" id="mail" placeholder="email@example.com">
+                            </div>
+                            <div class="col-12 col-md-6 d-flex">
+                              <label for="phone">Номер телефону</label>
+                              <input type="tel" class="form-control" id="inputPassword2" placeholder="+380631234567">
+                            </div>
 
-            </form>
+                            <p с>Дані для доставки</p>
+                            <div class="col-12 col-md-6 d-flex">
+                                <label for="city">Місто</label>
+                                <input type="text" class="form-control" id="city" placeholder="Чернівці">
+                            </div>
+                            <div class="col-12 col-md-6 d-flex">
+                                <label for="postOffice">Номер відділення</label>
+                                <input type="text" class="form-control" id="postOffice" placeholder="35">
+                            </div>
+                            <div class="col-12 d-flex align-items-center">
+                                <input type="checkbox" id="dontCall" name="dontCallTrue">
+                                <label id="dontCallLabel" for="dontCallTrue">Впевнена(-ий) у замовленні. Не телефонуйте мені</label>
+                            </div>
+                            <div class="col-12">
+                              <button type="submit" class="btn btn-primary mb-3">Підтвердити замовлення</button>
+                            </div>
+                          </form>
+                    </div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        ..ffff
+                    </div>
+                </div>
+
+                <form action="" method="post">
+    
+                </form>
+            </div>
         </div>
         <div class="contacts">
 
         </div>
 
     </div>
-
+    <script src="js/main.min.js"></script>
 </body>
 </html>
