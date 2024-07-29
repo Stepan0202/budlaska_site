@@ -15,28 +15,46 @@
                     <div class="header__burger col-1 mx-1">
                         <span></span>
                     </div>
-                    <menu class="menu col-md-7 col-sm-2 d-flex">
-                        <ul class="d-flex justify-content-between col-8 col-md-8 mx-auto">
-                            <li><a href="">про «будь ласка»</a></li>
-                            <li><a href="">ціни</a></li>
-                            <li><a href="">оплата і доставка</a></li>
-                            <li><a href="">контакти</a></li>
+                    <menu class="menu col-md-7 col-sm-2 d-flex align-items-center">
+                        <ul class="d-flex justify-content-between align-items-center col-8 col-md-8 mx-auto">
+                            <li><a href="#about">про «будь ласка»</a></li>
+                            <li><a href="#prices">ціни</a></li>
+                            <li><a href="#deliveryAndPayment">оплата і доставка</a></li>
+                            <li><a href="#contacts">контакти</a></li>
                         </ul>
                     </menu>
                     <div class="button__container col-sm-3 d-flex justify-content-center"><div class="button_red orderButton d-flex align-items-center justify-content-center"><a href="">замовити</a></div></div>
                 </div>
             </div>
         </header>
-        <div class="lead">
+        <section class="lead">
             <div class="container d-flex flex-column justify-content-center">
                 <h1>Будь ласка</h1>
                 <p class="descriptor">Валюта дитячого щастячка</p>
+                <p>Відповідальні батьки, як ми з вами, завжди піклуються про дисципліну. Але іноді так хочеться робити послаблення в правилах, бо малі це обожнюють.  Ми придумали компроміс між правилами та бажанням іноді побалувати дитину.</p>
             </div>
-        </div>
-        <div class="preferences">
+        </section>
+        <section id="about" class="imgAndDesc py-5">
             <div class="container">
                 <div class="row">
-                    <div class="cards cards_negativeMargin">
+                    <div class="imgAndDesc__img col-12 col-lg-6">
+                        <img src="./img/several_coupons_1000x800.jpg" alt="Заображення купонів">
+                    </div>
+                    <div class="imgAndDesc__text col-12 col-lg-6">
+                        <h2>протестовано на власних дітях</h2>
+                        <p>
+                            «БУДЬ ЛАСКА» — це набір купонів, кожен з яких дозволяє щось, що зазвичай заборонено. Ви даруєте такий набір дитині. В її руках опиняється свобода дій і більше самостійності. І через цю свободу дитина вчиться відповідальності. Бо купонів — обмежена кількість. 
+                        </p>
+                        <div class="button_red imgAndDesc__btn"><a href="">замовити «будь ласка»</a></div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+        <section class="preferences">
+            <div class="container">
+                <div class="row">
+                    <div class="cards">
                         <div class="card card_blur card_border">
                             <div class="card__imgContainer">
                                 <img src="./img/icons/fair-trade.png" alt="Перевага: вчить відповідальності" class="card__img">
@@ -68,25 +86,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="imgAndDesc py-5">
-            <div class="container">
-                <div class="row">
-                    <div class="imgAndDesc__img col-12 col-lg-6">
-                        <img src="./img/several_coupons_1000x800.jpg" alt="Заображення купонів">
-                    </div>
-                    <div class="imgAndDesc__text col-12 col-lg-6">
-                        <h2>ми придумали, як безпечно послабити правила</h2>
-                        <p>
-                            «БУДЬ ЛАСКА» — це набір купонів, кожен з яких дозволяє щось, що зазвичай заборонено. Ви даруєте такий набір дитині. В її руках опиняється свобода дій і більше самостійності. І через цю свободу дитина вчиться відповідальності. Бо купонів — обмежена кількість. 
-                        </p>
-                        <div class="button_red imgAndDesc__btn"><a href="">замовити «будь ласка»</a></div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-        <div class="prices py-5">
+        </section>
+        <section id="prices" class="prices py-5">
             <div class="container">
                 <h2>передпродаж зі знижкою</h2>
                 <p>Перші відправки відбудуться менше, ніж за тиждень. Оформіть передзамовлення, щоб отримати знижку 30%!</p>
@@ -126,8 +127,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="timer">
+        </section>
+        <section class="timer">
             <div class="container px-5 pt-4">
                 <p class="timer__desc">Знижка діє ще</p>
                 <p class="timer__body">
@@ -135,8 +136,8 @@
                 </p>
             </div>
 
-        </div>
-        <div class="complectation mt-5">
+        </section>
+        <section class="complectation mt-5">
             <div class="container">
                 <h2>ЩО ВХОДИТЬ У КОМПЛЕКТ</h2>
                 <p>Ми тестували «БУДЬ ЛАСКА» на своїх дітях. По-перше, вони були в захваті. По-друге, комплекту вистачило більше, ніж на півроку. А деякі купони діти берегли до останнього.</p>
@@ -156,8 +157,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="orderForm mt-5">
+        </section>
+        <section class="orderForm mt-5">
             <div class="container">
                 <h2>Тираж партії зі знижкою обмежений!</h2>
                 <p>Замовляйте «БУДЬ ЛАСКА» прямо зараз</p>
@@ -220,10 +221,43 @@
     
                 </form>
             </div>
-        </div>
-        <div class="contacts">
+        </section>
+        <section id="deliveryAndPayment" class="deliveryAndPayment">
+            <div class="container"> 
+                <h2>Доставка та оплата</h2>
+                <div class="row">
+                    <div class="col-6">
+                        <h3>Доставка</h3>
+                        <p>Доставляємо купони через «Нову Пошту» або «Укрпошту».</p>
 
-        </div>
+                        <p>Вартість доставки — за тарифами перевізника</p>
+                    </div>
+                    <div class="col-6">
+                        <h3>Оплата</h3>
+                        <p>Ви можете оплатити покупку двома способами:</p>
+                        <ul>
+                            <li>Передплатою на картку ФОП</li>
+                            <li>При отриманні — накладеним платежем на «Новій Пошті» </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="contacts" class="contacts">
+            <div class="container">
+                <h2>Контакти</h2>
+                <p>Відправляємо валюту дитячого щастячка з Одеси. </p>
+                <p>Виникли питання, є пропозиції, хочете поскаржитись або подякувати? Робіть це будь-яким зручним для вас способом</p>
+                <ul>
+                    <li>За телефоном:</li>
+                    <li>У зучному для вас месенджері</li>
+                    <li>По e-mail: </li>
+                </ul>
+            </div>
+
+        </section>
 
     </div>
     <script src="js/main.min.js"></script>
