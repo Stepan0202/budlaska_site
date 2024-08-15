@@ -29,6 +29,12 @@ a:link, a:visited {
 p{
     font-family: $secondary-font;
 }
+@media (max-width: 767px) {
+    h1{
+        font-size: 12vw;
+    }
+}
+
 .header__body{
     position: relative;
     z-index: 2;
@@ -188,7 +194,6 @@ body{
     margin-top: 70px;
     p{
         background-color: rgba(255, 255, 255, 0.8);
-        
     }
     p.descriptor + p{
         font-size: 1.5vw;
@@ -207,6 +212,19 @@ body{
     padding: 10px 15px;
     border-radius: 15px;
 }
+@media (max-width: 767px){
+    p.descriptor{
+        font-size: 4vw;
+    }
+    p.descriptor + p.description{
+        font-size: 3vw;
+        max-width: 80wv;
+
+    }
+
+}
+
+
 @media  (min-width: 625px) and (max-width: 767px){
     h1{
         font-size: 8.5vw;

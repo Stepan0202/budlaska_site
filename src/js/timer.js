@@ -28,10 +28,4 @@ function updateCountdown(){
     let timeLeftArray = [daysLeft, hoursLeft, minutesLeft, secondsleft];
     setTimeOnThePage(timeLeftArray, dateElementsArray);
 }
-    setInterval(updateCountdown, 1000);
-
-// console.log(timeDifference);
-// console.log(daysLeft);
-// console.log(hoursLeft);
-// console.log(minutesLeft);
-// console.log(secondsleft);
+setInterval(updateCountdown, 1000);

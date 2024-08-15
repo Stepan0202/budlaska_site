@@ -29,3 +29,15 @@ document.getElementById('orderForm').addEventListener('submit', function(event) 
         alert("Виникла помилка при відправці замовлення.");
     });
 });
+function toggleDeliveryOptions() {
+    var deliveryService = document.getElementById('deliveryService').value;
+    document.getElementById('novaPoshtaOptions').style.display = (deliveryService === 'novaPoshta') ? 'block' : 'none';
+    document.getElementById('ukrPoshtaOptions').style.display = (deliveryService === 'ukrPoshta') ? 'block' : 'none';
+}
+
+function toggleNovaPoshtaDetails() {
+    var deliveryMethod = document.getElementById('novaPoshtaDeliveryMethod').value;
+    document.getElementById('novaPoshtaPostamat').style.display = (deliveryMethod === 'postamat') ? 'block' : 'none';
+    document.getElementById('novaPoshtaBranch').style.display = (deliveryMethod === 'branch') ? 'block' : 'none';
+    document.getElementById('novaPoshtaCourier').style.display = (deliveryMethod === 'courier') ? 'block' : 'none';
+}

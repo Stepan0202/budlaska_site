@@ -31,10 +31,10 @@
             <div class="container d-flex flex-column justify-content-center">
                 <h1>Будь ласка</h1>
                 <p class="descriptor">Валюта дитячого щастячка</p>
-                <p>Відповідальні батьки, як ми з вами, завжди піклуються про дисципліну. Але іноді так хочеться робити послаблення в правилах, бо малі це обожнюють.  Ми придумали компроміс між правилами та бажанням іноді побалувати дитину.</p>
+                <p class="description py-5">Відповідальні батьки, як ми з вами, завжди піклуються про дисципліну. Але іноді так хочеться робити послаблення в правилах, бо малі це обожнюють.  Ми придумали компроміс між правилами та бажанням іноді побалувати дитину.</p>
             </div>
         </section>
-        <section id="about" class="imgAndDesc py-5">
+        <section id="about" class="imgAndDesc p-1">
             <div class="container">
                 <div class="row">
                     <div class="imgAndDesc__img col-12 col-lg-6">
@@ -173,6 +173,7 @@
                 <div class="tab-content" id="orderTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <form id="orderForm" class="row g-3 py-5">
+                            <!-- Існуючі поля форми -->
                             <div class="col-12 col-md-6 d-flex">
                                 <label for="secondName">Прізвище</label>
                                 <input type="text" class="form-control" id="secondName" name="secondName" placeholder="Шевченко">
@@ -193,16 +194,68 @@
                               <label for="phone">Номер телефону</label>
                               <input type="tel" class="form-control" id="inputPassword2" name="phone" placeholder="+380631234567">
                             </div>
-
-                            <p с>Дані для доставки</p>
-                            <div class="col-12 col-md-6 d-flex">
-                                <label for="city">Місто</label>
-                                <input type="text" class="form-control" id="city" name="city" placeholder="Чернівці">
+        
+                            <!-- Додавання вибору служби доставки -->
+                            <div class="col-12 d-flex">
+                                <label for="deliveryService">Служба доставки</label>
+                                <select class="form-control" id="deliveryService" name="deliveryService" onchange="toggleDeliveryOptions()">
+                                    <option value="">Оберіть службу доставки</option>
+                                    <option value="novaPoshta">Нова Пошта</option>
+                                    <option value="ukrPoshta">Укрпошта</option>
+                                </select>
                             </div>
-                            <div class="col-12 col-md-6 d-flex">
-                                <label for="postOffice">Номер відділення</label>
-                                <input type="text" class="form-control" id="postOffice" name="postOffice" placeholder="35">
+        
+                            <!-- Параметри для Нової Пошти -->
+                            <div id="novaPoshtaOptions" style="display: none;">
+                                <div class="col-12 d-flex">
+                                    <label for="novaPoshtaDeliveryMethod">Спосіб доставки</label>
+                                    <select class="form-control" id="novaPoshtaDeliveryMethod" name="novaPoshtaDeliveryMethod" onchange="toggleNovaPoshtaDetails()">
+                                        <option value="">Оберіть спосіб доставки</option>
+                                        <option value="postamat">Поштомат</option>
+                                        <option value="branch">Відділення</option>
+                                        <option value="courier">Кур'єр</option>
+                                    </select>
+                                </div>
+                                <div id="novaPoshtaPostamat" style="display: none;">
+                                    <div class="col-12 d-flex">
+                                        <label for="postamatNumber">Номер поштомату</label>
+                                        <input type="text" class="form-control" id="postamatNumber" name="postamatNumber" placeholder="123">
+                                    </div>
+                                </div>
+                                <div id="novaPoshtaBranch" style="display: none;">
+                                    <div class="col-12 d-flex">
+                                        <label for="branchNumber">Номер відділення</label>
+                                        <input type="text" class="form-control" id="branchNumber" name="branchNumber" placeholder="35">
+                                    </div>
+                                </div>
+                                <div id="novaPoshtaCourier" style="display: none;">
+                                    <div class="col-12 d-flex">
+                                        <label for="courierCity">Місто</label>
+                                        <input type="text" class="form-control" id="courierCity" name="courierCity" placeholder="Чернівці">
+                                    </div>
+                                    <div class="col-12 d-flex">
+                                        <label for="courierStreet">Вулиця</label>
+                                        <input type="text" class="form-control" id="courierStreet" name="courierStreet" placeholder="Шевченка">
+                                    </div>
+                                    <div class="col-12 col-md-6 d-flex">
+                                        <label for="houseNumber">Номер будинку</label>
+                                        <input type="text" class="form-control" id="houseNumber" name="houseNumber" placeholder="15">
+                                    </div>
+                                    <div class="col-12 col-md-6 d-flex">
+                                        <label for="apartmentNumber">Номер квартири</label>
+                                        <input type="text" class="form-control" id="apartmentNumber" name="apartmentNumber" placeholder="20">
+                                    </div>
+                                </div>
                             </div>
+        
+                            <!-- Параметри для Укрпошти -->
+                            <div id="ukrPoshtaOptions" style="display: none;">
+                                <div class="col-12 d-flex">
+                                    <label for="ukrPoshtaBranchNumber">Номер відділення</label>
+                                    <input type="text" class="form-control" id="ukrPoshtaBranchNumber" name="ukrPoshtaBranchNumber" placeholder="35">
+                                </div>
+                            </div>
+        
                             <div class="col-12 d-flex align-items-center">
                                 <input type="checkbox" id="dontCall" name="dontCall">
                                 <label id="dontCallLabel" for="dontCallTrue">Впевнена(-ий) у замовленні. Не телефонуйте мені</label>
@@ -216,10 +269,6 @@
                         ..ffff
                     </div>
                 </div>
-
-                <form action="" method="post">
-    
-                </form>
             </div>
         </section>
         <section id="deliveryAndPayment" class="deliveryAndPayment">
