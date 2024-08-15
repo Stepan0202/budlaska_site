@@ -73,15 +73,15 @@
                             <div class="card__imgContainer">
                                 <img src="./img/icons/imagination.png" alt="Перевага: компроміс між «можна» та «хочу»" class="card__img">
                             </div>
-                            <h3 class="card__header">Компроміс між «можна» та «хочу»</h3>
-                            <p class="card__descriptor">Може, дитині дійсно необхідно, наприклад, не піти до школи. Головне, щоб подібне не ставало системою. «Будь ласка» цього не допустить.</p>
+                            <h3 class="card__header">Конкурент іграшккам-одноденкам</h3>
+                            <p class="card__descriptor">Купуєте іграшки, про які забувають на наступний день? «БУДЬ ЛАСКА» — подарунок, яким діти користуються довго</p>
                         </div>
                         <div class="card card_blur card_border">
                             <div class="card__imgContainer">
                                 <img src="./img/icons/activities.png" alt="" class="card__img">
                             </div>
                             <h3 class="card__header">Індикатор потреб</h3>
-                            <p class="card__descriptor">Іноді відступити від правил — не забаганка, а реальна потреба. Якщо дитина готова віддати свій дорогоцінний купон, значить точно потребує пом’якшення. </p>
+                            <p class="card__descriptor">Іноді відступити від правил — не забаганка, а реальна потреба.  Головне, щоб подібне не ставало системою. Якщо дитина готова віддати свій дорогоцінний купон, значить точно потребує пом’якшення. </p>
                         </div>
                     </div>
                 </div>
@@ -132,7 +132,7 @@
             <div class="container px-5 pt-4">
                 <p class="timer__desc">Знижка діє ще</p>
                 <p class="timer__body">
-                    <span class="timer__days">6</span> ДНІВ <span class="timer__hours">23</span>:<span class="timer__minutes">20</span>:<span class="timer__seconds">17</span>  
+                    <span id="timer__days" class="timer__days">6</span> ДНІВ <span id="timer__hours" class="timer__hours">23</span>:<span id="timer__minutes" class="timer__minutes">20</span>:<span id="timer__seconds" class="timer__seconds">17</span>  
                 </p>
             </div>
 
@@ -172,39 +172,39 @@
                 </ul>
                 <div class="tab-content" id="orderTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <form class="row g-3 py-5">
+                        <form id="orderForm" class="row g-3 py-5">
                             <div class="col-12 col-md-6 d-flex">
                                 <label for="secondName">Прізвище</label>
-                                <input type="text" class="form-control" id="secondName" placeholder="Шевченко">
+                                <input type="text" class="form-control" id="secondName" name="secondName" placeholder="Шевченко">
                             </div>
                             <div class="col-12 col-md-6 d-flex">
                                 <label for="name">Ім'я</label>
-                                <input type="text" class="form-control" id="name" placeholder="Тамара">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Тамара">
                             </div>
                             <div class="col-12 col-md-6 d-flex">
                                 <label for="lastName">По-батькові</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="Олександрівна">
+                                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Олександрівна">
                             </div>
                             <div class="col-12 col-md-6 d-flex">
                               <label for="mail">Eлектрона адреса</label>
-                              <input type="text" class="form-control" id="mail" placeholder="email@example.com">
+                              <input type="text" class="form-control" id="mail" name="mail" placeholder="email@example.com">
                             </div>
                             <div class="col-12 col-md-6 d-flex">
                               <label for="phone">Номер телефону</label>
-                              <input type="tel" class="form-control" id="inputPassword2" placeholder="+380631234567">
+                              <input type="tel" class="form-control" id="inputPassword2" name="phone" placeholder="+380631234567">
                             </div>
 
                             <p с>Дані для доставки</p>
                             <div class="col-12 col-md-6 d-flex">
                                 <label for="city">Місто</label>
-                                <input type="text" class="form-control" id="city" placeholder="Чернівці">
+                                <input type="text" class="form-control" id="city" name="city" placeholder="Чернівці">
                             </div>
                             <div class="col-12 col-md-6 d-flex">
                                 <label for="postOffice">Номер відділення</label>
-                                <input type="text" class="form-control" id="postOffice" placeholder="35">
+                                <input type="text" class="form-control" id="postOffice" name="postOffice" placeholder="35">
                             </div>
                             <div class="col-12 d-flex align-items-center">
-                                <input type="checkbox" id="dontCall" name="dontCallTrue">
+                                <input type="checkbox" id="dontCall" name="dontCall">
                                 <label id="dontCallLabel" for="dontCallTrue">Впевнена(-ий) у замовленні. Не телефонуйте мені</label>
                             </div>
                             <div class="col-12">

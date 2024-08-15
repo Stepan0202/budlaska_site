@@ -51,12 +51,18 @@ function copyFonts() {
     return src('./src/fonts/**/*.{ttf,woff,eof,svg}')
     .pipe(dest('./dist/fonts/'));
  };
+ function copyPhp() {
+    return src('./src/php/**/*.php')
+    .pipe(dest('./dist/php/'));
+ };
 function watchTask(){
     watch('/src/img/**/*', series(minifyImages, browserReload)),
     watch('./src/**/*.html', series(htmlInclude, browserReload)),
-    watch('./src/**/*.scss', series(scssCompiler, browserReload))
-    watch('./src/js/**/*.js', series(minifyJS, browserReload));
-    watch('./src/fonts/**/*.{ttf,woff,eof,svg}', series(copyFonts, browserReload))
+    watch('./src/**/*.scss', series(scssCompiler, browserReload)),
+    watch('./src/js/**/*.js', series(minifyJS, browserReload)),
+    watch('./src/fonts/**/*.{ttf,woff,eof,svg}', series(copyFonts, browserReload),
+    watch('./src/php/**/*.php', series(copyPhp, browserReload))
+)
 }
 
   exports.default = series(
@@ -65,6 +71,7 @@ function watchTask(){
     scssCompiler,
     minifyJS,
     copyFonts,
+    copyPhp,
     parallel(browserSyn, watchTask)
 )
     
@@ -73,3 +80,4 @@ function watchTask(){
   exports.browserSync = browserSyn;
   exports.watchTask = watchTask;
   exports.copyFonts = copyFonts;
+  exports.copyPhp = copyPhp;
