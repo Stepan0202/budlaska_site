@@ -172,98 +172,138 @@
                 </ul>
                 <div class="tab-content" id="orderTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <form id="orderForm" class="row g-3 py-5">
-                            <!-- Існуючі поля форми -->
-                            <div class="col-12 col-md-6 d-flex">
-                                <label for="secondName">Прізвище</label>
-                                <input type="text" class="form-control" id="secondName" name="secondName" placeholder="Шевченко">
-                            </div>
-                            <div class="col-12 col-md-6 d-flex">
-                                <label for="name">Ім'я</label>
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Тамара">
-                            </div>
-                            <div class="col-12 col-md-6 d-flex">
-                                <label for="lastName">По-батькові</label>
-                                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Олександрівна">
-                            </div>
-                            <div class="col-12 col-md-6 d-flex">
-                              <label for="mail">Eлектрона адреса</label>
-                              <input type="text" class="form-control" id="mail" name="mail" placeholder="email@example.com">
-                            </div>
-                            <div class="col-12 col-md-6 d-flex">
-                              <label for="phone">Номер телефону</label>
-                              <input type="tel" class="form-control" id="inputPassword2" name="phone" placeholder="+380631234567">
-                            </div>
-        
-                            <!-- Додавання вибору служби доставки -->
-                            <div class="col-12 d-flex">
-                                <label for="deliveryService">Служба доставки</label>
-                                <select class="form-control" id="deliveryService" name="deliveryService" onchange="toggleDeliveryOptions()">
-                                    <option value="">Оберіть службу доставки</option>
-                                    <option value="novaPoshta">Нова Пошта</option>
-                                    <option value="ukrPoshta">Укрпошта</option>
-                                </select>
-                            </div>
-        
-                            <!-- Параметри для Нової Пошти -->
-                            <div id="novaPoshtaOptions" style="display: none;">
-                                <div class="col-12 d-flex">
-                                    <label for="novaPoshtaDeliveryMethod">Спосіб доставки</label>
-                                    <select class="form-control" id="novaPoshtaDeliveryMethod" name="novaPoshtaDeliveryMethod" onchange="toggleNovaPoshtaDetails()">
-                                        <option value="">Оберіть спосіб доставки</option>
-                                        <option value="postamat">Поштомат</option>
-                                        <option value="branch">Відділення</option>
-                                        <option value="courier">Кур'єр</option>
-                                    </select>
+                        <div class="row">             
+                            <form id="orderForm" class="row g-4 ms-5 py-5 pe-5 col-11 col-md-7 justify-content-center">
+                                <!-- Поле для кількості наборів -->
+                                <div class="col-12 row d-flex align-items-end">
+                                    <label class="col-8" for="quantity"><h3>Кількість наборів</h3></label>
+                                    <input class="col-3" type="number" class="form-control customInput" id="quantity" name="quantity" value="1" min="1" onchange="calculateTotal()">
                                 </div>
-                                <div id="novaPoshtaPostamat" style="display: none;">
-                                    <div class="col-12 d-flex">
-                                        <label for="postamatNumber">Номер поштомату</label>
-                                        <input type="text" class="form-control" id="postamatNumber" name="postamatNumber" placeholder="123">
+
+                                <section class="orderForm__step row g-2">
+                                    <h3>Ваші данні</h3>
+                                    <div class="col-11 col-md-11 d-flex align-items-end">
+                                        <label class="label_30per" for="secondName">Прізвище</label>
+                                        <input type="text" class="form-control customInput" id="secondName" name="secondName" placeholder="Шевченко">
                                     </div>
+                                    <div class="col-11 col-md-11 d-flex align-items-end">
+                                        <label class="label_30per" for="name">Ім'я</label>
+                                        <input type="text" class="form-control customInput" id="name" name="name" placeholder="Тамара">
+                                    </div>
+                                    <div class="col-11 col-md-11 d-flex align-items-end">
+                                        <label class="label_30per" for="lastName">По-батькові</label>
+                                        <input type="text" class="form-control customInput" id="lastName" name="lastName" placeholder="Олександрівна">
+                                    </div>
+                                    <div class="col-11 col-md-11 d-flex align-items-end">
+                                        <label class="label_30per" for="lastName">Місто</label>
+                                        <input type="text" class="form-control customInput" id="city" name="city" placeholder="Одеса">
+                                    </div>
+                                    <div class="col-11 col-md-11 d-flex align-items-end">
+                                        <label class="label_30per" for="mail">Eлектрона адреса</label>
+                                        <input type="text" class="form-control customInput" id="mail" name="mail" placeholder="email@example.com">
+                                    </div>
+                                    <div class="col-11 col-md-11 d-flex align-items-end">
+                                        <label class="label_30per" for="phone">Номер телефону</label>
+                                        <input type="tel" class="form-control customInput" id="phone" name="phone" placeholder="+380631234567">
+                                    </div>
+                                </section>
+            
+            
+                                <!-- Додавання вибору служби доставки -->
+                                <section class="orderForm__step row g-2">
+                                    <h3>Спосіб доставки</h3>
+                                    <div class="col-11 d-flex">
+                                        <label class="label_30per" for="deliveryService">Служба доставки</label>
+                                        <select class="form-control" id="deliveryService" name="deliveryService" onchange="toggleDeliveryOptions()">
+                                            <option value="">Оберіть службу доставки</option>
+                                            <option value="novaPoshta">Нова Пошта</option>
+                                            <option value="ukrPoshta">Укрпошта</option>
+                                        </select>
+                                    </div>
+                
+                                    <!-- Параметри для Нової Пошти -->
+                                    <div id="novaPoshtaOptions" style="display: none;">
+                                        <div class="col-11 d-flex">
+                                            <label for="novaPoshtaDeliveryMethod">Спосіб доставки</label>
+                                            <select class="form-control" id="novaPoshtaDeliveryMethod" name="novaPoshtaDeliveryMethod" onchange="toggleNovaPoshtaDetails()">
+                                                <option value="">Оберіть спосіб доставки</option>
+                                                <option value="postamat">Поштомат</option>
+                                                <option value="branch">Відділення</option>
+                                                <option value="courier">Кур'єр</option>
+                                            </select>
+                                        </div>
+                                        <div id="novaPoshtaPostamat" style="display: none;">
+                                            <div class="col-11 d-flex">
+                                                <label for="postamatNumber">Номер поштомату</label>
+                                                <input type="text" class="form-control" id="postamatNumber" name="postamatNumber" placeholder="123">
+                                            </div>
+                                        </div>
+                                        <div id="novaPoshtaBranch" style="display: none;">
+                                            <div class="col-11 d-flex">
+                                                <label for="branchNumber">Номер відділення</label>
+                                                <input type="text" class="form-control" id="branchNumber" name="branchNumber" placeholder="35">
+                                            </div>
+                                        </div>
+                                        <div id="novaPoshtaCourier" style="display: none;">
+                                            <div class="col-12 d-flex">
+                                                <label for="courierCity">Місто</label>
+                                                <input type="text" class="form-control" id="courierCity" name="courierCity" placeholder="Чернівці">
+                                            </div>
+                                            <div class="col-12 d-flex">
+                                                <label for="courierStreet">Вулиця</label>
+                                                <input type="text" class="form-control" id="courierStreet" name="courierStreet" placeholder="Шевченка">
+                                            </div>
+                                            <div class="col-12 col-md-6 d-flex">
+                                                <label for="houseNumber">Номер будинку</label>
+                                                <input type="text" class="form-control" id="houseNumber" name="houseNumber" placeholder="15">
+                                            </div>
+                                            <div class="col-12 col-md-6 d-flex">
+                                                <label for="apartmentNumber">Номер квартири</label>
+                                                <input type="text" class="form-control" id="apartmentNumber" name="apartmentNumber" placeholder="20">
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                                    <!-- Параметри для Укрпошти -->
+                                    <div id="ukrPoshtaOptions" style="display: none;">
+                                        <div class="col-11 d-flex">
+                                            <label for="ukrPoshtaBranchNumber">Номер відділення</label>
+                                            <input type="text" class="form-control" id="ukrPoshtaBranchNumber" name="ukrPoshtaBranchNumber" placeholder="35">
+                                        </div>
+                                    </div>
+                                    <!-- Поле для відображення суми до сплати -->
+
+
+                                </section>
+                                <section class="orderForm__step row g-3">
+                                    <h3>Спосіб оплати</h3>
+                                    <div class="col-12 row d-flex">
+                                        <div class="col-6 row">
+                                            <label class="col-9" for="paymentMethod_card">Переказ на картку ФОПа</label>
+                                            <input class="col-1" type="radio" id="paymentMethod_card" name="paymentMethod" placeholder="35">
+                                        </div>
+                                        <div class="col-6 row">
+                                            <label class="col-9" for="paymentMethod_post">При отриманні на «Новій Пошті»</label>
+                                            <input class="col-1" type="radio"  id="paymentMethod_post" name="paymentMethod" placeholder="35">
+                                        </div>
+                                    </div>
+                                </section>
+                                <div class="col-11 d-flex align-items-center">
+                                    <input type="checkbox" id="dontCall" name="dontCall">
+                                    <label id="dontCallLabel" for="dontCallTrue">Впевнена(-ий) у замовленні. Не телефонуйте мені</label>
                                 </div>
-                                <div id="novaPoshtaBranch" style="display: none;">
-                                    <div class="col-12 d-flex">
-                                        <label for="branchNumber">Номер відділення</label>
-                                        <input type="text" class="form-control" id="branchNumber" name="branchNumber" placeholder="35">
-                                    </div>
+                                <div class="col-11">
+                                <button type="submit" class="btn btn-primary mb-3">Підтвердити замовлення</button>
                                 </div>
-                                <div id="novaPoshtaCourier" style="display: none;">
-                                    <div class="col-12 d-flex">
-                                        <label for="courierCity">Місто</label>
-                                        <input type="text" class="form-control" id="courierCity" name="courierCity" placeholder="Чернівці">
-                                    </div>
-                                    <div class="col-12 d-flex">
-                                        <label for="courierStreet">Вулиця</label>
-                                        <input type="text" class="form-control" id="courierStreet" name="courierStreet" placeholder="Шевченка">
-                                    </div>
-                                    <div class="col-12 col-md-6 d-flex">
-                                        <label for="houseNumber">Номер будинку</label>
-                                        <input type="text" class="form-control" id="houseNumber" name="houseNumber" placeholder="15">
-                                    </div>
-                                    <div class="col-12 col-md-6 d-flex">
-                                        <label for="apartmentNumber">Номер квартири</label>
-                                        <input type="text" class="form-control" id="apartmentNumber" name="apartmentNumber" placeholder="20">
-                                    </div>
-                                </div>
-                            </div>
-        
-                            <!-- Параметри для Укрпошти -->
-                            <div id="ukrPoshtaOptions" style="display: none;">
-                                <div class="col-12 d-flex">
-                                    <label for="ukrPoshtaBranchNumber">Номер відділення</label>
-                                    <input type="text" class="form-control" id="ukrPoshtaBranchNumber" name="ukrPoshtaBranchNumber" placeholder="35">
-                                </div>
-                            </div>
-        
-                            <div class="col-12 d-flex align-items-center">
-                                <input type="checkbox" id="dontCall" name="dontCall">
-                                <label id="dontCallLabel" for="dontCallTrue">Впевнена(-ий) у замовленні. Не телефонуйте мені</label>
-                            </div>
-                            <div class="col-12">
-                              <button type="submit" class="btn btn-primary mb-3">Підтвердити замовлення</button>
-                            </div>
-                          </form>
+                            </form>
+                            <section class="orderInfo col-11 col-md-4 p-5 ms-4">
+                                <h3>Інформація шодо замовлення</h3>
+                                <p>Кількість наборів: <span class="kitsQuantity"></span></p>
+                                <p>Повна вартість: <span class="kitsFullPrice"></span></p>
+                                <p>Ваша знижка: <span class="kitsDiscount"></span></p>
+                                <p>До сплати: <span class="kitsTotalPrice" id="totalAmount"></span></p>
+                            </section>
+                        </div>
                     </div>
                     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                         ..ffff

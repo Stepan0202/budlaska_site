@@ -29,6 +29,13 @@ a:link, a:visited {
 p{
     font-family: $secondary-font;
 }
+
+.customInput{
+    border-width: 0px;
+    border-bottom: 1px $logo-color solid;
+    border-radius: 0;
+}
+
 @media (max-width: 767px) {
     h1{
         font-size: 12vw;
@@ -384,11 +391,12 @@ margin-bottom: 30px;
         font-size: 18px;
         line-height: 100%;
     }
-    label:not(#dontCallLabel){
+    .label_30per{
         margin-bottom: 5px;
         margin-right: 10px;
         width: 30%;
     }
+
     input[type="checkbox"]{
         width: 30px;
         height: 30px;
@@ -396,4 +404,10 @@ margin-bottom: 30px;
     }
 }
 .contacts {
+}
+.orderForm__step{
+    background-color: $bg-color;
+    padding: 20px 0 20px 20px;
+    border-radius: 15px;
+    border: $logo-color 1px dashed;
 }

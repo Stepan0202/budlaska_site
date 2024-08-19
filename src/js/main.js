@@ -29,6 +29,21 @@ document.getElementById('orderForm').addEventListener('submit', function(event) 
         alert("Виникла помилка при відправці замовлення.");
     });
 });
+function calculateTotal() {
+    var quantity = parseInt(document.getElementById('quantity').value);
+    var totalAmount;
+
+    if (quantity === 1) {
+        totalAmount = 281;
+    } else if (quantity === 2) {
+        totalAmount = 512;
+    } else {
+        totalAmount = 233 * quantity;
+    }
+
+    document.getElementById('totalAmount').value = totalAmount + ' грн';
+}
+
 function toggleDeliveryOptions() {
     var deliveryService = document.getElementById('deliveryService').value;
     document.getElementById('novaPoshtaOptions').style.display = (deliveryService === 'novaPoshta') ? 'block' : 'none';
