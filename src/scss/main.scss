@@ -230,14 +230,10 @@ body{
     }
 
 }
-
-
 @media  (min-width: 625px) and (max-width: 767px){
     h1{
         font-size: 8.5vw;
     }
-}
-.preferences {
 }
 .card_blur{
     background-color: rgb(255 255 255 / 30%);
@@ -344,6 +340,10 @@ margin-bottom: 30px;
     height: 36px;
     line-height: 36px;
     border-radius: 55px;
+    &:hover{
+        background-color: $logo-color;
+        cursor: pointer;
+    }
 }
 .timer {
     position: relative;

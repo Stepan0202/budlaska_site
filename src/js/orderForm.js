@@ -27,7 +27,8 @@ inputs.forEach((input, index) => {
 });
 
 //sending form
-document.getElementById('orderForm').addEventListener('submit', function(event) {
+const orderForm = document.getElementById('orderForm')
+orderForm.addEventListener('submit', function(event) {
     event.preventDefault(); // Зупиняє стандартну відправку форми
 
     const submitButton = document.activeElement;
@@ -68,17 +69,41 @@ function toggleNovaPoshtaDetails() {
 }
 
 //total block
+    //prices
+const basicPrice = 399;
+const oneComplectDiscountPrice = 281;
+const twoComplectDiscountPrice = 256;
+const threePlusComplectDiscountPrice = 233;
+    //total block fields
 const quantityField = document.getElementById('quantity');
 let quantityValue = quantityField.value;
 const total_kitsQuantity = document.querySelector(".orderInfo .kitsQuantity");
 const total_kitsFullPrice = document.querySelector(".orderInfo .kitsFullPrice");
 const total_kitsDiscount = document.querySelector(".orderInfo .kitsDiscount");
 const total_kitsTotalPrice = document.querySelector(".orderInfo .kitsTotalPrice");
-const basicPrice = 399;
-const oneComplectDiscountPrice = 281;
-const twoComplectDiscountPrice = 256;
-const threePlusComplectDiscountPrice = 233;
-console.log(total_kitsQuantity)
+    //btns in prices section
+const btn_oneKit = document.querySelector("#btn_oneKit");
+const btn_twoKit = document.querySelector("#btn_twoKit");
+const btn_threeKit = document.querySelector("#btn_threeKit");
+
+btn_oneKit.addEventListener("click", (event) =>{
+    event.preventDefault();
+    quantityField.value = event.currentTarget.dataset.quantity;
+    updateForm(calculateTotal(event.currentTarget.dataset.quantity));
+    orderForm.scrollIntoView({ behavior: 'smooth' });
+});
+btn_twoKit.addEventListener("click", (event) =>{
+    event.preventDefault();
+    quantityField.value = event.currentTarget.dataset.quantity;
+    updateForm(calculateTotal(event.currentTarget.dataset.quantity));
+    orderForm.scrollIntoView({ behavior: 'smooth' });
+});
+btn_threeKit.addEventListener("click", (event) =>{
+    event.preventDefault();
+    quantityField.value = event.currentTarget.dataset.quantity;
+    updateForm(calculateTotal(event.currentTarget.dataset.quantity));
+    orderForm.scrollIntoView({ behavior: 'smooth' });
+});
 quantity.addEventListener("change", (event) => {
     event.preventDefault();
     quantityValue = quantityField.value;
