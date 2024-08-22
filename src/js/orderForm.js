@@ -1,5 +1,6 @@
 header__container.addEventListener('click', toggleVisibility);
-
+console.dir(document.activeElement);
+console.log(document.activeElement);
 function toggleVisibility(){
     header__container.classList.toggle("active");
 }
@@ -27,33 +28,46 @@ inputs.forEach((input, index) => {
 });
 
 //sending form
-const orderForm = document.getElementById('orderForm')
-orderForm.addEventListener('submit', function(event) {
-    event.preventDefault(); // Зупиняє стандартну відправку форми
+document.addEventListener("DOMContentLoaded", function() {
+    // Regular Order Form submission
+    const orderForm = document.getElementById("orderForm");
+    if (orderForm) {
+        orderForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+            let formData = new FormData(orderForm);
 
-    const submitButton = document.activeElement;
-    if (submitButton && submitButton.type === "submit") {
-        // Збираємо дані форми
-        let formData = new FormData(this);
+            fetch('/php/orderForm.php', {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert("Замовлення успішно відправлено!");
+                console.log(data);
+            })
+            .catch(error => console.error('Помилка:', error));
+        });
+    }
 
-        // Відправляємо дані форми за допомогою Fetch API
-        fetch('php/index.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.text())
-        .then(data => {
-            console.log(data);
-            alert("Ваше замовлення було успішно відправлено.");
-            // Тут можна додати додаткові дії, наприклад, перенаправлення на іншу сторінку
-        })
-        .catch(error => {
-            console.error('Помилка:', error);
-            alert("Виникла помилка при відправці замовлення.");
+    // Quick Order Form submission
+    const quickOrderForm = document.getElementById("quickOrderForm");
+    if (quickOrderForm) {
+        quickOrderForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+            let formData = new FormData(quickOrderForm);
+
+            fetch('/php/quickOrderForm.php', {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert("Швидке замовлення успішно відправлено!");
+            })
+            .catch(error => console.error('Помилка:', error));
         });
     }
 });
-
 
 function toggleDeliveryOptions() {
     var deliveryService = document.getElementById('deliveryService').value;
