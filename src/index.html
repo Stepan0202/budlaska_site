@@ -158,7 +158,7 @@
                 </div>
             </div>
         </section>
-        <section class="orderForm mt-5">
+        <section class="orderForm my-5">
             <div class="container">
                 <h2>Тираж партії зі знижкою обмежений!</h2>
                 <p>Замовляйте «БУДЬ ЛАСКА» прямо зараз</p>
@@ -180,7 +180,7 @@
                                     <input class="col-3" type="number" class="form-control customInput" id="quantity" name="quantity" value="1" min="1" onchange="calculateTotal()">
                                 </div>
 
-                                <section class="orderForm__step row g-2">
+                                <section class="blockWithBg row g-2">
                                     <h3>Ваші данні</h3>
                                     <div class="col-11 col-md-11 d-flex align-items-end">
                                         <label class="label_30per" for="secondName">Прізвище</label>
@@ -210,7 +210,7 @@
             
             
                                 <!-- Додавання вибору служби доставки -->
-                                <section class="orderForm__step row g-2">
+                                <section class="blockWithBg row g-2">
                                     <h3>Спосіб доставки</h3>
                                     <div class="col-11 d-flex">
                                         <label class="label_30per" for="deliveryService">Служба доставки</label>
@@ -224,7 +224,7 @@
                                     <!-- Параметри для Нової Пошти -->
                                     <div id="novaPoshtaOptions" style="display: none;">
                                         <div class="col-11 d-flex">
-                                            <label for="novaPoshtaDeliveryMethod">Спосіб доставки</label>
+                                            <label class="label_30per" for="novaPoshtaDeliveryMethod">Спосіб доставки</label>
                                             <select class="form-control" id="novaPoshtaDeliveryMethod" name="novaPoshtaDeliveryMethod" onchange="toggleNovaPoshtaDetails()">
                                                 <option value="">Оберіть спосіб доставки</option>
                                                 <option value="postamat">Поштомат</option>
@@ -234,31 +234,31 @@
                                         </div>
                                         <div id="novaPoshtaPostamat" style="display: none;">
                                             <div class="col-11 d-flex">
-                                                <label for="postamatNumber">Номер поштомату</label>
+                                                <label class="label_30per" for="postamatNumber">Номер поштомату</label>
                                                 <input type="text" class="form-control" id="postamatNumber" name="postamatNumber" placeholder="123">
                                             </div>
                                         </div>
                                         <div id="novaPoshtaBranch" style="display: none;">
                                             <div class="col-11 d-flex">
-                                                <label for="branchNumber">Номер відділення</label>
+                                                <label class="label_30per" for="branchNumber">Номер відділення</label>
                                                 <input type="text" class="form-control" id="branchNumber" name="branchNumber" placeholder="35">
                                             </div>
                                         </div>
                                         <div id="novaPoshtaCourier" style="display: none;">
-                                            <div class="col-12 d-flex">
-                                                <label for="courierCity">Місто</label>
+                                            <div class="col-11 d-flex">
+                                                <label class="label_30per" for="courierCity">Місто</label>
                                                 <input type="text" class="form-control" id="courierCity" name="courierCity" placeholder="Чернівці">
                                             </div>
-                                            <div class="col-12 d-flex">
-                                                <label for="courierStreet">Вулиця</label>
+                                            <div class="col-11 d-flex">
+                                                <label class="label_30per" for="courierStreet">Вулиця</label>
                                                 <input type="text" class="form-control" id="courierStreet" name="courierStreet" placeholder="Шевченка">
                                             </div>
-                                            <div class="col-12 col-md-6 d-flex">
-                                                <label for="houseNumber">Номер будинку</label>
+                                            <div class="col-11 d-flex">
+                                                <label class="label_30per" for="houseNumber">Номер будинку</label>
                                                 <input type="text" class="form-control" id="houseNumber" name="houseNumber" placeholder="15">
                                             </div>
-                                            <div class="col-12 col-md-6 d-flex">
-                                                <label for="apartmentNumber">Номер квартири</label>
+                                            <div class="col-11 d-flex">
+                                                <label class="label_30per" for="apartmentNumber">Номер квартири</label>
                                                 <input type="text" class="form-control" id="apartmentNumber" name="apartmentNumber" placeholder="20">
                                             </div>
                                         </div>
@@ -267,7 +267,7 @@
                                     <!-- Параметри для Укрпошти -->
                                     <div id="ukrPoshtaOptions" style="display: none;">
                                         <div class="col-11 d-flex">
-                                            <label for="ukrPoshtaBranchNumber">Номер відділення</label>
+                                            <label class="label_30per" for="ukrPoshtaBranchNumber">Номер відділення</label>
                                             <input type="text" class="form-control" id="ukrPoshtaBranchNumber" name="ukrPoshtaBranchNumber" placeholder="35">
                                         </div>
                                     </div>
@@ -275,7 +275,7 @@
 
 
                                 </section>
-                                <section class="orderForm__step row g-3">
+                                <section class="blockWithBg row g-3">
                                     <h3>Спосіб оплати</h3>
                                     <div class="col-12 row d-flex g-3">
                                         <div class="col-12 col-md-6 mb-3 row">
@@ -296,7 +296,7 @@
                                     <button type="submit" class="btn btn-primary mb-3">Підтвердити замовлення</button>
                                 </div>
                             </form>
-                            <section class="orderInfo col-11 col-md-4 p-5">
+                            <section class="orderInfo blockWithBg col-11 col-md-4 p-5">
                                 <h3>Інформація шодо замовлення</h3>
                                 <p>Кількість наборів: <span class="kitsQuantity"></span></p>
                                 <p>Повна вартість: <span class="kitsFullPrice"></span></p>
@@ -323,13 +323,21 @@
             <div class="container"> 
                 <h2>Доставка та оплата</h2>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-5 blockWithBg me-1">
                         <h3>Доставка</h3>
-                        <p>Доставляємо купони через «Нову Пошту» або «Укрпошту».</p>
-
+                        <div class="row">
+                            <div class="deliveryLogo col-12 d-flex align-items-center pe-2 mb-2 row">
+                                <img class="d-block col-12 col-md-3" src="img/icons/Nova_Poshta_2022_logo.png" alt="Доставляємо 'Новою Поштою'">
+                                <p class="col-12 col-md-8">На відділення, до поштомату або кур'єром «Нової Пошти»</p>
+                            </div>
+                            <div class="deliveryLogo col-12 d-flex align-items-center pe-2 mb-4 row">
+                                <img class="d-block col-12 col-md-3" src="img/ukrposhta_logo.svg" alt="Доставляємо 'Укпоштою'">
+                                <p class="col-12 col-md-8">На відділення «Укрпошти»</p>
+                            </div>
+                        </div>
                         <p>Вартість доставки — за тарифами перевізника</p>
                     </div>
-                    <div class="col-6">
+                    <div class="col-6 blockWithBg">
                         <h3>Оплата</h3>
                         <p>Ви можете оплатити покупку двома способами:</p>
                         <ul>
@@ -342,15 +350,15 @@
 
         </section>
 
-        <section id="contacts" class="contacts">
+        <section id="contacts" class="contacts mt-5">
             <div class="container">
                 <h2>Контакти</h2>
                 <p>Відправляємо валюту дитячого щастячка з Одеси. </p>
                 <p>Виникли питання, є пропозиції, хочете поскаржитись або подякувати? Робіть це будь-яким зручним для вас способом</p>
                 <ul>
-                    <li>За телефоном:</li>
-                    <li>У зучному для вас месенджері</li>
-                    <li>По e-mail: </li>
+                    <li>За телефоном: <a href="tel:+380633984887">+380633984887</a></li>
+                    <li>У зручному для вас месенджері: Telegram, WhatsApp, Viber</li>
+                    <li>По e-mail: <a href="mailto: support@budlaska.com.ua">support@budlaska.com.ua</a></li>
                 </ul>
             </div>
 

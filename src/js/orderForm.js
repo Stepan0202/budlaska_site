@@ -95,6 +95,12 @@ const total_kitsQuantity = document.querySelector(".orderInfo .kitsQuantity");
 const total_kitsFullPrice = document.querySelector(".orderInfo .kitsFullPrice");
 const total_kitsDiscount = document.querySelector(".orderInfo .kitsDiscount");
 const total_kitsTotalPrice = document.querySelector(".orderInfo .kitsTotalPrice");
+    // setting manual values to total block
+    total_kitsQuantity.innerHTML = 1;
+    total_kitsFullPrice.innerHTML = basicPrice + " грн";
+    total_kitsDiscount.innerHTML = basicPrice - oneComplectDiscountPrice  + " грн";
+    total_kitsTotalPrice.innerHTML = oneComplectDiscountPrice  + " грн";
+
     //btns in prices section
 const btn_oneKit = document.querySelector("#btn_oneKit");
 const btn_twoKit = document.querySelector("#btn_twoKit");
@@ -134,6 +140,7 @@ function updateForm(infoObj){
 
 }
 function calculateTotal(quantity) {
+    quantity = Number.parseInt(quantity);
     let full = basicPrice*quantity;
     let discount;
     let amount;
@@ -147,6 +154,7 @@ function calculateTotal(quantity) {
         discount = full - threePlusComplectDiscountPrice*quantity;
         amount = threePlusComplectDiscountPrice*quantity;
     }
+
     return {
         "quantity": quantity,
         "full": full,

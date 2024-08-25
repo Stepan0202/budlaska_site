@@ -403,11 +403,18 @@ margin-bottom: 30px;
         margin-right: 20px;
     }
 }
-.contacts {
+.orderInfo{
+    height: max-content;
+    position:sticky;
+    right: 5vw;
+    top: 307px;
 }
-.orderForm__step{
+.blockWithBg{
     background-color: $bg-color;
     padding: 20px 0 20px 20px;
     border-radius: 15px;
     border: $logo-color 1px dashed;
+}
+.deliveryAndPayment, .contacts{
+    font-size: 16px;
 }
