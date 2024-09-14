@@ -170,6 +170,18 @@ body{
     text-transform: uppercase;
     color: $logo-color;
     font-size: 18px;
+    a:link, a:visited {
+        color: $logo-color;
+        text-decoration: none;
+        cursor: auto;
+      }
+      
+      a:link:active, a:visited:active {
+        color: $logo-color;
+      }
+      a:hover{
+        cursor: pointer;
+      }
 
 }
 .menu {
@@ -264,8 +276,7 @@ margin-bottom: 30px;
     }
     .card__header{
         font-size: 18px;
-        color: $logo-color; 
-        flex: 1 0 auto;
+        color: $logo-color;
     }
 
     .card__descriptor{
@@ -280,10 +291,21 @@ margin-bottom: 30px;
 }
 .card__img{
     height: 40%;
+    flex: 1 0 auto;
     img{
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit:fill
+    }
+}
+.card__btn {
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 55px;
+    &:hover{
+        background-color: $logo-color;
+        cursor: pointer;
     }
 }
 .card_transparent{
@@ -332,19 +354,8 @@ margin-bottom: 30px;
     color: $button-bg-color;
     font-weight: 600;
 }
-.card_descriptor {
-    
-}
-.card__btn {
-    width: 100%;
-    height: 36px;
-    line-height: 36px;
-    border-radius: 55px;
-    &:hover{
-        background-color: $logo-color;
-        cursor: pointer;
-    }
-}
+
+
 .timer {
     position: relative;
     background-color: #fff;
@@ -384,6 +395,9 @@ margin-bottom: 30px;
     p{
         font-size: 14px;
     }
+    .card{
+        height: 350px;
+    }
 }
 
 .orderForm {
@@ -417,4 +431,12 @@ margin-bottom: 30px;
 }
 .deliveryAndPayment, .contacts{
     font-size: 16px;
+}
+
+//Thank you page
+.thankYou{
+    margin: 200px;
+    p{
+        font-size: 16px;
+    }
 }

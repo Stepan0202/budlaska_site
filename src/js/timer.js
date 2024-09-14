@@ -4,7 +4,7 @@ let hours = document.getElementById("timer__hours");
 let minutes = document.getElementById("timer__minutes");
 let seconds = document.getElementById("timer__seconds");
 let dateElementsArray = [days, hours, minutes, seconds];
-let endDate = new Date('21 Aug 2024 00:00:00 GMT');
+let endDate = new Date('21 Sep 2024 00:00:00 GMT');
 
 let today = new Date();
 let timeDifference = endDate - today;

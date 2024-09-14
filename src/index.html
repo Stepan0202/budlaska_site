@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <title>Будь ласка | Валюта дитячого щастячка</title>
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window,document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '506581191989187'); 
+        fbq('track', 'PageView');
+        </script>
+        <noscript>
+        <img height="1" width="1" 
+        src="https://www.facebook.com/tr?id=506581191989187&ev=PageView
+        &noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GGC18PGRYR"></script>
@@ -20,7 +39,7 @@
         <header class="header">
             <div class="container header__container">
                 <div class="row header__body d-flex justify-content-between align-items-center">
-                    <div class="logo__container d-flex justify-content-start justify-content-md-center col-md-2">будь ласка</div>
+                    <div class="logo__container d-flex justify-content-start justify-content-md-center col-md-2"><a href=".">будь ласка</a></div>
                     <div class="header__burger col-1 mx-1">
                         <span></span>
                     </div>
@@ -102,7 +121,7 @@
                 <p>Перші відправки відбудуться менше, ніж за тиждень. Оформіть передзамовлення, щоб отримати знижку 30%!</p>
                 <div class="cards prices__cards">
                     <div class="card">
-                        <div class="card__img"></div>
+                        <div class="card__img"><img src="./img/box_3.png" alt="Зображення коробки"></div>
                         <h3 class="card__header">«БУДЬ ЛАСКА» ДЛЯ 1 ДИТИНИ</h3>
                         <div class="card_descriptor">
                             <p>
@@ -113,7 +132,7 @@
                         <div class="button_red card__btn" id="btn_oneKit" data-quantity="1"><a href="#orderForm">замовити</a></div>
                     </div>
                     <div class="card">
-                        <div class="card__img"></div>
+                        <div class="card__img"><img src="./img/twoBoxes_2.png" alt="Зображення двох коробок"></div>
                         <h3 class="card__header">«БУДЬ ЛАСКА» ДЛЯ 2 ДІТЕЙ</h3>
                         <div class="card_descriptor">
                             <p>
@@ -121,11 +140,11 @@
                             </p>
                             <p>256 грн/комлпект</p>
                         </div>
-                        <div class="button_red card__btn " id="btn_twoKit" data-quantity="2"><a href="#orderForm">замовит</a></div>
+                        <div class="button_red card__btn " id="btn_twoKit" data-quantity="2"><a href="#orderForm">замовити</a></div>
                     </div>
                     <div class="card">
-                        <div class="card__img"></div>
-                        <h3 class="card__header">«БУДЬ ЛАСКА» ДЛЯ 3 ДІТЕЙ</h3>
+                        <div class="card__img"><img src="./img/threeBoxes_2.png" alt="Зображення кількох коробок"></div>
+                        <h3 class="card__header">«БУДЬ ЛАСКА» ДЛЯ 3+ ДІТЕЙ</h3>
                         <div class="card_descriptor">
                             <p>
                                 <span class="oldPrice">999 ГРН</span> <span class="newPrice">699 ГРН</span>
@@ -151,17 +170,17 @@
                 <h2>ЩО ВХОДИТЬ У КОМПЛЕКТ</h2>
                 <p>Ми тестували «БУДЬ ЛАСКА» на своїх дітях. По-перше, вони були в захваті. По-друге, комплекту вистачило більше, ніж на півроку. А деякі купони діти берегли до останнього.</p>
                 <div class="cards prices__cards">
-                    <div class="card card_transparent">
+                    <div class="card">
                         <div class="card__img"><img src="./img/several_coupons_1000x800.jpg" alt="Заображення купонів"></div>
                         <h3 class="card__header">20 КАРТОК — ПО 
                             2 КОЖНОГО ВИДУ</h3>
                     </div>
                     <div class="card">
-                        <div class="card__img"><img src="" alt=""></div>
+                        <div class="card__img"><img src="./img/instruction.jpg" alt="Зображення рекомендацій з використання"></div>
                         <h3 class="card__header">РЕКОМЕНДАЦІЇ З ВИКОРИСТАННЯ</h3>
                     </div>
                     <div class="card">
-                        <div class="card__img"><img src="" alt=""></div>
+                        <div class="card__img"><img src="./img/carabin.png" alt="Зображення карабіну"></div>
                         <h3 class="card__header">КАРАБІН   ДЛЯ ЗРУЧНОГО З’ЄДНАННЯ КАРТОК</h3>
                     </div>
                 </div>
@@ -288,7 +307,7 @@
                                     <h3>Спосіб оплати</h3>
                                     <div class="col-12 row d-flex g-3">
                                         <div class="col-12 col-md-6 mb-3 row">
-                                            <label class="col-9" for="paymentMethod_card">Переказ на картку ФОПа</label>
+                                            <label class="col-9" for="paymentMethod_card">Переказ на картку</label>
                                             <input class="col-1" type="radio" id="paymentMethod_card" name="paymentMethod" placeholder="35">
                                         </div>
                                         <div class="col-12 col-md-6 row">
@@ -350,7 +369,7 @@
                         <h3>Оплата</h3>
                         <p>Ви можете оплатити покупку двома способами:</p>
                         <ul>
-                            <li>Передплатою на картку ФОП</li>
+                            <li>Передплатою на картку</li>
                             <li>При отриманні — накладеним платежем на «Новій Пошті» </li>
                         </ul>
                     </div>

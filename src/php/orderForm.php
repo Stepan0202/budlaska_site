@@ -19,33 +19,53 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $houseNumber = isset($_POST['houseNumber']) ? $_POST['houseNumber'] : "Не вказано";
     $apartmentNumber = isset($_POST['apartmentNumber']) ? $_POST['apartmentNumber'] : "Не вказано";
     $ukrPoshtaBranchNumber = isset($_POST['ukrPoshtaBranchNumber']) ? $_POST['ukrPoshtaBranchNumber'] : "Не вказано";
+
     // Налаштування електронної пошти
-    $to = "orders@budlaska.com.ua";
-    $subject = "Нове замовлення";
-    $message = "Прізвище: $secondName\n"
-             . "Ім'я: $name\n"
-             . "По-батькові: $lastName\n"
-             . "Eлектрона адреса: $mail\n"
-             . "Номер телефону: $phone\n"
-             . "Місто: $city\n"
-             .   "Служба доставки: $deliveryService\n"
-             .   "Спосіб доставки: $deliveryMethod\n"
-             .   "Номер поштомату: $postamatNumber\n"
-             .   "Номер відділення НП: $branchNumber\n"
-             .   "Вулиця: $courierStreet\n"
-             .   "Будинок: $houseNumber\n"
-             .   "Квартира: $apartmentNumber\n"
-             .   "Номер выддылення Укрпошти: $ukrPoshtaBranchNumber\n"
-             . "Номер відділення: $postOffice\n"
-             . "Не телефонуйте мені: $dontCall\n"
-              .  "Кількість: : $quantity\n";
-
-             $headers = "From: no-reply@example.com\r\n"
+    $toAdmin = "orders@budlaska.com.ua";
+    $subjectAdmin = "Нове замовлення";
+    $messageAdmin = "Прізвище: $secondName\n"
+                . "Ім'я: $name\n"
+                . "По-батькові: $lastName\n"
+                . "Eлектрона адреса: $mail\n"
+                . "Номер телефону: $phone\n"
+                . "Місто: $city\n"
+                . "Служба доставки: $deliveryService\n"
+                . "Спосіб доставки: $deliveryMethod\n"
+                . "Номер поштомату: $postamatNumber\n"
+                . "Номер відділення НП: $branchNumber\n"
+                . "Вулиця: $courierStreet\n"
+                . "Будинок: $houseNumber\n"
+                . "Квартира: $apartmentNumber\n"
+                . "Номер відділення Укрпошти: $ukrPoshtaBranchNumber\n"
+                . "Номер відділення: $postOffice\n"
+                . "Не телефонуйте мені: $dontCall\n"
+                . "Кількість: $quantity\n";
+    
+    $headers = "From: order_confirmation@budlaska.com\r\n"
              . "Content-Type: text/plain; charset=UTF-8";
-
-    // Відправка електронної пошти
-    if (mail($to, $subject, $message, $headers)) {
-        echo "Ваше замовлення було успішно відправлено.";
+    
+    // Відправка електронної пошти адміністратору
+    if (mail($toAdmin, $subjectAdmin, $messageAdmin, $headers)) {
+        // Відправка підтвердження клієнту
+        $subjectCustomer = "Ваше замовлення було отримано";
+        $messageCustomer = "Шановний $name $secondName,\n\n"
+                         . "Дякуємо за ваше замовлення! Ось деталі вашого замовлення:\n"
+                         . "Кількість: $quantity\n"
+                         . "Місто: $city\n"
+                         . "Служба доставки: $deliveryService\n"
+                         . "Номер телефону: $phone\n"
+                         . "Ми зв'яжемось з вами найближчим часом.\n\n"
+                         . "З повагою,\n"
+                         . "Команда BudLaska";
+    
+        // Відправка електронної пошти клієнту
+        if (mail($mail, $subjectCustomer, $messageCustomer, $headers)) {
+            // Після успішної відправки листів перенаправляємо на сторінку подяки
+            header("Location: https://budlaska.com.ua/thanks.html");
+            exit(); // Не забудьте завершити виконання скрипта після перенаправлення
+        } else {
+            echo "Замовлення відправлено, але виникла помилка при відправці підтвердження на електронну пошту клієнта.";
+        }
     } else {
         echo "Виникла помилка при відправці замовлення.";
     }

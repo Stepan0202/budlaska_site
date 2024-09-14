@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Будь ласка | Валюта дитячого щастячка</title>
+    <!-- Facebook Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '506581191989187');
+    fbq('track', 'Purchase', {
+        value: totalAmount,  // Replace with the actual total purchase amount
+        currency: 'UAH'  // Replace with your currency code
+    });
+</script>
+<noscript>
+    <img height="1" width="1"
+    src="https://www.facebook.com/tr?id=506581191989187&ev=Purchase&noscript=1"/>
+</noscript>
+    <!-- End Facebook Pixel Code -->
+</head>
+<body>
+<div class="wrapper">
+    <header class="header">
+        <div class="container header__container">
+            <div class="row header__body d-flex justify-content-between align-items-center">
+                <div class="logo__container d-flex justify-content-start justify-content-md-center col-md-2"><a href=".">будь ласка</a> </div>
+                <div class="header__burger col-1 mx-1">
+                    <span></span>
+                </div>
+                <menu class="menu col-md-7 col-sm-2 d-flex align-items-center">
+                    <ul class="d-flex justify-content-between align-items-center col-8 col-md-8 mx-auto">
+                        <li><a href="./index.html#about">про «будь ласка»</a></li>
+                        <li><a href="./index.html#prices">ціни</a></li>
+                        <li><a href="./index.html#deliveryAndPayment">оплата і доставка</a></li>
+                        <li><a href="./index.html#contacts">контакти</a></li>
+                    </ul>
+                </menu>
+                <div class="button__container col-sm-3 d-flex justify-content-center">
+                    <div class="button_red orderButton d-flex align-items-center justify-content-center">
+                        <a href="./index.html#orderForm">замовити</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="thankYou">
+        <div class="container text-center">
+            <h2>Дякуємо за ваше замовлення!</h2>
+            <p>Вже друкуємо першу партію. Відправки відбудуться незабаром.</p>
+            <p>Ми отримали вашу інформацію і незабаром надішлемо підтвердження на вашу електронну пошту.</p>
+            <p>Якщо у вас виникли запитання, будь ласка, зв'яжіться з нами через розділ <a href="./index.html#contacts">Контакти</a>.</p>
+        </div>
+    </section>
+</div>
+</body>
+</html>
