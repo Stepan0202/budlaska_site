@@ -61,13 +61,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Відправка електронної пошти клієнту
         if (mail($mail, $subjectCustomer, $messageCustomer, $headers)) {
             // Після успішної відправки листів перенаправляємо на сторінку подяки
-            header("Location: https://budlaska.com.ua/thanks.html");
+            header("Location: /thanks.html");
             exit(); // Не забудьте завершити виконання скрипта після перенаправлення
         } else {
             echo "Замовлення відправлено, але виникла помилка при відправці підтвердження на електронну пошту клієнта.";
         }
     } else {
-        echo "Виникла помилка при відправці замовлення.";
+        error_log("Error sending email to customer: " . error_get_last()['message']);
+        echo "There was an error processing your order. Please try again later.";
+    }
     }
 }
 ?>

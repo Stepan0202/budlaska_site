@@ -433,6 +433,17 @@ margin-bottom: 30px;
     font-size: 16px;
 }
 
+.feedback__avatar{
+    flex: 0 1 180px;
+}
+.feedback__main{
+    flex: 1 0 auto;
+}
+.carousel-caption{
+    position: static;
+}
+
+
 //Thank you page
 .thankYou{
     margin: 200px;
@@ -440,3 +451,4 @@ margin-bottom: 30px;
         font-size: 16px;
     }
 }
+
