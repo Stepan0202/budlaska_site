@@ -71,5 +71,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "There was an error processing your order. Please try again later.";
     }
     }
-}
+
 ?>

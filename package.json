@@ -9,8 +9,10 @@
   "author": "Derevyanko Stepan",
   "license": "ISC",
   "dependencies": {
+    "@glidejs/glide": "^3.6.2",
     "bootstrap": "^5.3.3",
     "browser-sync": "^2.29.3",
+    "glide": "^0.2.0",
     "gulp": "^4.0.2",
     "gulp-babel-minify": "^0.5.2",
     "gulp-concat": "^2.6.1",

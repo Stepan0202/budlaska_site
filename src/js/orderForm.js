@@ -1,6 +1,6 @@
 header__container.addEventListener('click', toggleVisibility);
 console.dir(document.activeElement);
-console.log(document.activeElement);
+console.log("ORDER FORM");
 function toggleVisibility(){
     header__container.classList.toggle("active");
 }

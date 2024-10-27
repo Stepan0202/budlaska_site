@@ -1,8 +1,12 @@
 @import "./assets/fonts";
 @import "./assets/variables";
+@import "./assets/slider";
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../../node_modules/bootstrap/scss/bootstrap-reboot.scss";
+@import "../../node_modules/@glidejs/glide/src/assets/sass/glide.core";
+@import "../../node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+// tag selectors
 h1, h2, h3{
     font-family: $main-font;
     color: $logo-color;
@@ -11,6 +15,12 @@ h1, h2, h3{
 h1{
     font-size: 9vw;
 }
+@media (max-width: 767px) {
+    h1{
+        font-size: 12vw;
+    }
+}
+
 h2{
     font-size: 4.5vw;
 }
@@ -29,19 +39,47 @@ a:link, a:visited {
 p{
     font-family: $secondary-font;
 }
+ul {
+    list-style-type: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+menu {
+    list-style-type: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
 
+}
+//END of tag selectors
+//class selectors
 .customInput{
     border-width: 0px;
     border-bottom: 1px $logo-color solid;
     border-radius: 0;
 }
 
-@media (max-width: 767px) {
-    h1{
-        font-size: 12vw;
+
+@media (max-width: 576px) {
+    // Override the gutter padding for the container
+    .header__container {
+        --bs-gutter-x: 0;
+        --bs-gutter-y: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    // Remove the negative margins from the row
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+    }
+    .logo__container{
+        font-size: 3vw;
+        padding-top: 5px;
     }
 }
-
 .header__body{
     position: relative;
     z-index: 2;
@@ -49,6 +87,7 @@ p{
 .header__burger{
     display: none;
 }
+
 @media (max-width: 767px) {
     .header{
         height: 50px;
@@ -56,6 +95,7 @@ p{
     .header__body{
         height: 80px;
         gap: 20px;
+        padding-bottom: 30px;
 
     }
     .header__burger{
@@ -63,7 +103,6 @@ p{
         display: flex;
         align-items: center;
         position: absolute;
-        top: 0;
         right: 0;
         height: 25px;
         span{
@@ -151,25 +190,30 @@ body{
     font-family: $secondary-font;
     color: $text-color;
     font-size: 12px;
-    max-width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 .wrapper {
     display: flex;
     flex-direction: column;
-   
+    max-width: 100vw;
+    
+}
+.header-container{
+    overflow-x: hidden;
 }
 .header{
-    padding: 20px 0;
     position: fixed;
     width: 100%;
     background-color:#fff;
     z-index: 2;
+
 }
 .logo__container {
     font-family: $main-font;
     text-transform: uppercase;
     color: $logo-color;
-    font-size: 18px;
+    font-size: 2vw;
     a:link, a:visited {
         color: $logo-color;
         text-decoration: none;
@@ -197,6 +241,7 @@ body{
             height: 100%;
             display: flex;
             align-items: center;
+
         }
     }
 }
@@ -204,7 +249,7 @@ body{
     border-radius: 15px;
     width: 50%;
     height: 30px;
-    font-size: 14px;
+    font-size: 1.6vw;
 }
 .lead {
     background-image: url("../img/bg_pattern.jpg");
@@ -452,3 +497,36 @@ margin-bottom: 30px;
     }
 }
 
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: black;
+}
+#carouselFeedback .carousel-control-prev,
+#carouselFeedback .carousel-control-next {
+    width: 5%; /* Adjust width as needed */
+}
+
+#carouselFeedback .carousel-control-prev {
+    left: -5%; /* Move the button to the left */
+}
+
+#carouselFeedback .carousel-control-next {
+    right: -5%; /* Move the button to the right */
+}
+
+.videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+}
+
+.videoWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
